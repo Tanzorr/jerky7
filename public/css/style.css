@@ -1,0 +1,94 @@
+.router-link-active{
+    background: #000000!important;
+    color:#fff;
+}
+
+.nav{
+    margin-bottom: 40px;
+}
+
+.nav-link{
+    border-radius: 4px;
+}
+
+.r_btn{
+    margin-top: 20px;
+}
+
+.service--list{
+    display: none;
+}
+
+.logo{
+    max-width: 230px;
+
+}
+
+img{
+    max-width: 100%;
+}
+
+.main_baner{
+    height: 350px;
+    background-image: url("https://img5.goodfon.ru/original/1366x768/f/9c/les-nebo-zakat-gory-ozero-otrazhenie-bereg-vershiny-vecher-e.jpg?d=1");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+
+}
+section,h3{
+    padding: 60px 0;
+}
+.cont-baner{
+    height:230px;
+    width: 100%;
+}
+
+.set_rortator{
+
+}
+
+.social{
+    border: solid 1px #8c8c8c;
+}
+
+.price{
+    font-size: 45px;
+}
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+}
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-container {
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+}
+.modal-body {
+    margin: 20px 0;
+}
+.modal-default-button {
+    float: right;
+}
