@@ -91,6 +91,9 @@
 
             }
         },
+        mounted() {
+            console.log('mounted');
+        },
         created() {
             console.log('Hi Oleg');
             this.fetchProducts();
@@ -100,11 +103,11 @@
         methods: {
             viewCart(){
                 if (localStorage.getItem('carts')){
-                    this.carts = JSON.parse(localStorage.getItem('carts'));
+                    this.carts = JSON.parse(localStorage.getItem('carts')) ?  JSON.parse(localStorage.getItem('carts')) : [];
                     this.badge =this.carts.length;
-                    this.totalprice =this.carts.reduce((total, item)=>{
-                        return total + this.quontaty * item.price;
-                    },0);
+                     this.totalprice =this.carts.reduce((total, item)=>{
+                       //  return total + this.quontaty * item.price;
+                     },0);
                     console.log(this.carts);
                     console.log(this.badge);
                 }
@@ -112,21 +115,21 @@
                 console.log(this.badge);
             },
             addCart(pro){
+                console.log('Pro', pro);
                 this.cartadd.id = pro.id;
                 this.cartadd.name = pro.name;
                 this.cartadd.price = pro.price;
                 this.cartadd.amount = pro.amount;
-              //console.log('carts',localStorage.getItem('carts'));
+                console.log('carts',localStorage.getItem('carts'));
                 this.carts = JSON.parse(localStorage.getItem('carts'));
-                this.carts.forEach(function(item, i, arr) {
-                    console.log(item.quontaty);
-                });
+                console.log('addcarts',this.carts);
                 this.carts.forEach((total, item)=>{
-                    return total + this.quontaty * item.price;
-                },0);
+                   return this.quontaty++;
+                  //  return total + this.quontaty * item.price;
+                 },0);
                 console.log(this.carts.id);
-                console.log(pro.id);
-                this.carts.push(this.cartadd);
+               // console.log(pro.id);
+              //  this.carts.push(this.cartadd);
                 this.cartadd = {};
                 this.storeCart();
             },
@@ -141,7 +144,7 @@
                 this.viewCart();
             },
             fetchProducts() {
-
+console.log('fetchProduct');
                 axios.get("products").then(response => {
                     this.products = response.data.products;
                     console.log('Products', response.data.products);
