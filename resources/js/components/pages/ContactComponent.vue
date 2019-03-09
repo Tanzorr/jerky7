@@ -25,7 +25,7 @@
         },
         methods:{
             fetchPage(){
-                axios.get("pages/3").then(response=> {this.page = response.data.page});
+                axios.get("pages/2").then(response=> {this.page = response.data.page});
                 console.log(this.page);
             },
         }

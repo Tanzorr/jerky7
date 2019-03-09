@@ -48,6 +48,7 @@ class PagesController extends Controller
     public function show($id)
     {
         $page = Page::where('id',$id)->first();
+
         return response()->json(["page"=>$page]);
     }
 
