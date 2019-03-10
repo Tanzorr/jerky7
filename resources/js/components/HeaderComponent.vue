@@ -92,7 +92,9 @@
         methods:{
             viewCart(){
                 if (localStorage.getItem('carts')){
-                    this.carts = JSON.parse(localStorage.getItem('carts'));
+
+                   // this.carts = JSON.parse(localStorage.getItem('carts'));
+                    console.log('cart',this.carts);
                     this.badge =this.carts.length;
                     this.totalprice =this.carts.reduce((total,item)=>{
                         return total + this.quontaty * item.price;

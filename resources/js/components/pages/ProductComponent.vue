@@ -31,6 +31,9 @@
 
             }
         },
+        mounted() {
+          console.log('mounted');
+        },
         created() {
             this.fetchProduct();
             this.viewCart();
@@ -66,8 +69,9 @@
                 this.viewCart();
             },
             fetchProduct(){
+                console.log('fetch');
                 axios.get("product/"+this.$route.params.id).then(response=> {this.product = response.data.product});
-                console.log(this.post);
+
             }
         }
     }
