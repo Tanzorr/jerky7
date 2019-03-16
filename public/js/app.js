@@ -51831,7 +51831,7 @@ var content = __webpack_require__(47);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("82e00f3e", content, false, {});
+var update = __webpack_require__(2)("5fa67df2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52052,7 +52052,7 @@ var content = __webpack_require__(52);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("f2f61d76", content, false, {});
+var update = __webpack_require__(2)("18ddacf2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52219,7 +52219,7 @@ var content = __webpack_require__(57);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("68e005c6", content, false, {});
+var update = __webpack_require__(2)("72cdcb6c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52672,7 +52672,7 @@ var content = __webpack_require__(62);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("676c9864", content, false, {});
+var update = __webpack_require__(2)("4d7762fe", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52971,7 +52971,7 @@ var content = __webpack_require__(68);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("432975a2", content, false, {});
+var update = __webpack_require__(2)("64f16a56", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52995,7 +52995,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53006,8 +53006,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -53084,17 +53082,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             products: [],
+            example: {},
             showModal: false,
             order: [],
-            carts: [],
+            carts: [{
+                private: 0
+            }],
+            addet: [],
             cartadd: {
                 id: '',
                 name: '',
                 price: '',
-                amount: ''
+                amount: '',
+                private: 1
+
             },
             badge: '0',
             quontaty: 1,
+
             totalprice: '0'
 
         };
@@ -53109,37 +53114,73 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        viewCart: function viewCart() {
-            if (localStorage.getItem('carts')) {
-                this.carts = JSON.parse(localStorage.getItem('carts')) ? JSON.parse(localStorage.getItem('carts')) : [];
-                this.badge = this.carts.length;
-                this.totalprice = this.carts.reduce(function (total, item) {
-                    //  return total + this.quontaty * item.price;
-                }, 0);
-                console.log(this.carts);
-                console.log(this.badge);
-            }
-            console.log(this.carts);
-            console.log(this.badge);
+        show: function show(product) {
+            this.showModal = true;
+            this.example = product;
         },
-        addCart: function addCart(pro) {
+        viewCart: function viewCart() {
             var _this = this;
 
-            console.log('Pro', pro);
-            this.cartadd.id = pro.id;
-            this.cartadd.name = pro.name;
-            this.cartadd.price = pro.price;
-            this.cartadd.amount = pro.amount;
-            console.log('carts', localStorage.getItem('carts'));
-            this.carts = JSON.parse(localStorage.getItem('carts'));
-            console.log('addcarts', this.carts);
-            this.carts.forEach(function (total, item) {
-                return _this.quontaty++;
-                //  return total + this.quontaty * item.price;
-            }, 0);
-            console.log(this.carts.id);
-            // console.log(pro.id);
-            //  this.carts.push(this.cartadd);
+            if (localStorage.getItem('carts')) {
+                this.carts = JSON.parse(localStorage.getItem('carts'));
+                this.badge = this.carts.length;
+                this.totalprice = this.carts.reduce(function (total, item) {
+                    return total + _this.quontaty * item.price;
+                }, 0);
+            }
+        },
+        addCart: function addCart(pro) {
+            console.log('start', this.carts.length);
+            if (this.carts.length >= 1) {
+
+                for (var i = 0; i < this.carts.length; i++) {
+
+                    if (this.carts[i].id == pro.id) {
+                        this.carts[i].private++;
+                        this.carts[i].price = this.carts[i].price * this.carts[i].private;
+                        console.log("incriment1", this.carts[i].private);
+                    } else {
+                        alert(22);
+                        console.log('tlse', pro);
+                        this.cartadd.id = pro.id;
+                        this.cartadd.name = pro.name;
+                        this.cartadd.price = pro.price;
+                        this.cartadd.amount = pro.amount;
+                        this.cartadd.private = 1;
+                        this.carts.push(this.cartadd);
+                    }
+                    this.cartadd.private * this.carts.count;
+                }
+            }
+            // else if(this.carts.length >0  && this.carts.length <=1){
+            //     console.log("pro",pro.id);
+            //     console.log("cartsId",this.carts);
+            //     if(this.carts[0].id === pro.id){
+            //         this.carts[0].private =2;
+            //         console.log("incriment2",this.carts[0].private);
+            //     }else{
+            //         console.log('tlse', pro);
+            //         this.cartadd.id = pro.id;
+            //         this.cartadd.name = pro.name;
+            //         this.cartadd.price = pro.price;
+            //         this.cartadd.amount = pro.amount;
+            //         this.cartadd.private = 2;
+            //         this.carts.push(this.cartadd);
+            //     }
+            //    // console.log('double',  this.carts);
+            // }
+            else {
+                    console.log('tlse', pro);
+                    this.cartadd.id = pro.id;
+                    this.cartadd.name = pro.name;
+                    this.cartadd.price = pro.price;
+                    this.cartadd.amount = pro.amount;
+
+                    this.carts.push(this.cartadd);
+                    console.log("cartsAdd", this.cartadd);
+                    console.log("Pro", pro);
+                }
+            console.log("cartsId2", this.carts);
             this.cartadd = {};
             this.storeCart();
         },
@@ -53162,6 +53203,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     }
+
 });
 
 /***/ }),
@@ -53179,7 +53221,7 @@ var render = function() {
       _vm._l(_vm.products, function(product) {
         return _c(
           "div",
-          { staticClass: "col-lg-3 col-sm-6 text-center" },
+          { key: product.id, staticClass: "col-lg-3 col-sm-6 text-center" },
           [
             _c("img", {
               attrs: {
@@ -53222,7 +53264,7 @@ var render = function() {
                 attrs: { id: "show-modal" },
                 on: {
                   click: function($event) {
-                    _vm.showModal = true
+                    return _vm.show(product)
                   }
                 }
               },
@@ -53273,13 +53315,17 @@ var render = function() {
                                   "data-target": "#myModal"
                                 }
                               },
-                              [_vm._v(_vm._s(product.title))]
+                              [_vm._v(_vm._s(_vm.example.title))]
                             )
                           ]),
                           _vm._v(" "),
-                          _c("p", [_vm._v(" " + _vm._s(product.description))]),
+                          _c("p", [
+                            _vm._v(" " + _vm._s(_vm.example.description))
+                          ]),
                           _vm._v(" "),
-                          _c("p", [_c("b", [_vm._v(_vm._s(product.price))])])
+                          _c("p", [
+                            _c("b", [_vm._v(_vm._s(_vm.example.price))])
+                          ])
                         ]),
                         _vm._v(" "),
                         _c(
@@ -53292,7 +53338,7 @@ var render = function() {
                               "table",
                               { staticClass: "table table-striped text-left" },
                               _vm._l(_vm.carts, function(cart, n) {
-                                return _c("tr", { key: cart.id }, [
+                                return _c("tr", [
                                   _c("td", [_vm._v(_vm._s(cart.name))]),
                                   _vm._v(" "),
                                   _c("td", [
@@ -53305,19 +53351,23 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.quontaty,
-                                          expression: "quontaty"
+                                          value: cart.private,
+                                          expression: "cart.private"
                                         }
                                       ],
                                       staticClass: "form-control",
-                                      attrs: { type: "text", readonly: "" },
-                                      domProps: { value: _vm.quontaty },
+                                      attrs: { type: "text" },
+                                      domProps: { value: cart.private },
                                       on: {
                                         input: function($event) {
                                           if ($event.target.composing) {
                                             return
                                           }
-                                          _vm.quontaty = $event.target.value
+                                          _vm.$set(
+                                            cart,
+                                            "private",
+                                            $event.target.value
+                                          )
                                         }
                                       }
                                     })
@@ -53486,7 +53536,7 @@ var content = __webpack_require__(73);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("5247140c", content, false, {});
+var update = __webpack_require__(2)("6af62394", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -53711,7 +53761,7 @@ var content = __webpack_require__(78);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("514415aa", content, false, {});
+var update = __webpack_require__(2)("62e0de50", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -53894,7 +53944,7 @@ var content = __webpack_require__(83);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("37350f0b", content, false, {});
+var update = __webpack_require__(2)("48d1d7b1", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -54063,7 +54113,7 @@ var content = __webpack_require__(88);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("5b2de278", content, false, {});
+var update = __webpack_require__(2)("2170dfdc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -54230,7 +54280,7 @@ var content = __webpack_require__(93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("87077530", content, false, {});
+var update = __webpack_require__(2)("0e981e4a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -54385,7 +54435,7 @@ var content = __webpack_require__(97);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("31ca9cfc", content, false, {});
+var update = __webpack_require__(2)("3ec537af", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -54809,7 +54859,7 @@ var content = __webpack_require__(102);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("9f353470", content, false, {});
+var update = __webpack_require__(2)("853fff0a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
